@@ -1,0 +1,51 @@
+/* Configurações Gerais */
+* { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; }
+
+body { 
+    height: 100vh; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    transition: background 0.5s;
+}
+
+/* Temas */
+.theme-default { background: #1a1a2e; color: white; }
+.theme-light { background: #f0f0f0; color: #333; }
+.theme-neon { background: #000; color: #00f2ff; }
+
+.container { text-align: center; width: 100%; max-width: 400px; padding: 20px; }
+
+.screen { display: flex; flex-direction: column; gap: 15px; }
+.hidden { display: none !important; }
+
+/* Tabuleiro Responsivo */
+.board { 
+    display: grid; 
+    grid-template-columns: repeat(3, 100px); 
+    grid-template-rows: repeat(3, 100px); 
+    gap: 10px; 
+    justify-content: center; 
+    margin: 20px 0;
+}
+
+.cell { 
+    width: 100px; 
+    height: 100px; 
+    background: rgba(255, 255, 255, 0.1); 
+    border: 2px solid currentColor; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+    font-size: 2.5rem; 
+    cursor: pointer; 
+}
+
+/* Responsividade para Mobile */
+@media (max-width: 450px) {
+    .board { grid-template-columns: repeat(3, 80px); grid-template-rows: repeat(3, 80px); }
+    .cell { width: 80px; height: 80px; }
+}
+
+button { padding: 12px; cursor: pointer; border: none; border-radius: 5px; background: #4e4eff; color: white; font-weight: bold; }
+button:hover { opacity: 0.8; }

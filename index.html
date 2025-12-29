@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogo da Velha Tecnológico</title>
+
+    <link rel="icon" type="image/png" href="image/favicon.png">
+
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body class="theme-default">
+    <div class="container">
+        <div id="main-menu" class="screen">
+            <h1>Jogo da Velha</h1>
+            <button onclick="startGame('single')">Single Player</button>
+            <button onclick="startGame('multi')">Multiplayer</button>
+            <button onclick="showScreen('options-menu')">Opções</button>
+        </div>
+
+        <div id="game-screen" class="screen hidden">
+            <div id="status">Vez do Jogador X</div>
+            <div id="board" class="board">
+                <div class="cell" data-index="0"></div>
+                <div class="cell" data-index="1"></div>
+                <div class="cell" data-index="2"></div>
+                <div class="cell" data-index="3"></div>
+                <div class="cell" data-index="4"></div>
+                <div class="cell" data-index="5"></div>
+                <div class="cell" data-index="6"></div>
+                <div class="cell" data-index="7"></div>
+                <div class="cell" data-index="8"></div>
+            </div>
+            <div class="controls">
+                <button onclick="resetGame()">Reiniciar</button>
+                <button onclick="showScreen('main-menu')">Menu Principal</button>
+            </div>
+        </div>
+
+        <div id="options-menu" class="screen hidden">
+            <h2>Configurações</h2>
+            <div class="option-group">
+                <label>Tema de Fundo:</label>
+                <select id="theme-select" onchange="changeTheme()">
+                    <option value="theme-default">Padrão (Escuro)</option>
+                    <option value="theme-light">Claro</option>
+                    <option value="theme-neon">Neon Blue</option>
+                </select>
+            </div>
+            <div class="option-group">
+                <label>Volume da Música:</label>
+                <input type="range" id="volume-slider" min="0" max="1" step="0.1" value="0.5" oninput="updateVolume()">
+            </div>
+            <button onclick="showScreen('main-menu')">Voltar</button>
+        </div>
+    </div>
+    <audio id="bg-music" loop src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3"></audio>
+    <script src="js/script.js"></script>
+</body>
+</html>
